@@ -60,6 +60,7 @@ function setupMenuInteractions() {
     }
 
     function getContent(id) {
+        console.log('Getting content for:', id);
         const contents = {
             '#about': `
                 <h1>Greetings, Space Traveler</h1>
@@ -131,6 +132,8 @@ function setupContactForm() {
         return;
     }
 
+    console.log('Contact form found:', form);
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         console.log('Form submitted');
@@ -169,4 +172,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+// Call setupMenuInteractions on page load
+window.addEventListener('load', () => {
+    console.log('Page loaded, setting up menu interactions');
+    setupMenuInteractions();
 });
