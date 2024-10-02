@@ -128,6 +128,56 @@ footer {
     font-size: 1.5rem;
 }
 
+/* Contact Form Styles */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--cosmic-blue);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--cosmic-blue);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: var(--cosmic-blue);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3a5a9d;
+}
+
+#form-status {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .control-panel ul {
         flex-direction: column;

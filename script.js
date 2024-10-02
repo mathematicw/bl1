@@ -98,7 +98,7 @@ function setupMenuInteractions() {
             `,
             '#contact': `
                 <h2>Contact Us</h2>
-                <form id="contact-form" action="${process.env.FORMSPREE_ENDPOINT}" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/{form_id}" method="POST">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
