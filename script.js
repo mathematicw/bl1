@@ -34,7 +34,6 @@ function setupMenuInteractions() {
     menuItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
             item.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
-            showContent(item.getAttribute('href'));
         });
         item.addEventListener('mouseleave', () => {
             item.style.textShadow = 'none';
@@ -46,11 +45,13 @@ function setupMenuInteractions() {
     });
 
     function showContent(id) {
+        console.log('Showing content for:', id);
         const content = getContent(id);
         if (content) {
             contentBox.innerHTML = content;
             contentBox.style.display = 'block';
             if (id === '#contact') {
+                console.log('Setting up contact form');
                 setupContactForm();
             }
         } else {
@@ -98,7 +99,7 @@ function setupMenuInteractions() {
             `,
             '#contact': `
                 <h2>Contact Us</h2>
-                <form id="contact-form" action="https://formspree.io/f/{form_id}" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/xqkvazvk" method="POST">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -121,11 +122,18 @@ function setupMenuInteractions() {
 }
 
 function setupContactForm() {
+    console.log('Setting up contact form event listener');
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
+    if (!form) {
+        console.error('Contact form not found in the DOM');
+        return;
+    }
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        console.log('Form submitted');
         const formData = new FormData(form);
         fetch(form.action, {
             method: 'POST',
@@ -147,6 +155,7 @@ function setupContactForm() {
                 });
             }
         }).catch(error => {
+            console.error('Error submitting form:', error);
             formStatus.innerHTML = "Oops! There was a problem submitting your form";
         });
     });
