@@ -137,10 +137,9 @@ function setupContactForm() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         console.log('Form submitted');
-        const formData = new FormData(form);
-        fetch(form.action, {
+        fetch(this.action, {
             method: 'POST',
-            body: formData,
+            body: new FormData(this),
             headers: {
                 'Accept': 'application/json'
             }
