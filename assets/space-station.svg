@@ -1,0 +1,24 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stationGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(200,200,200);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(100,100,100);stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main body -->
+  <ellipse cx="100" cy="100" rx="80" ry="40" fill="url(#stationGradient)" />
+  
+  <!-- Solar panels -->
+  <rect x="10" y="90" width="180" height="5" fill="#4a90e2" />
+  <rect x="10" y="105" width="180" height="5" fill="#4a90e2" />
+  
+  <!-- Windows -->
+  <circle cx="70" cy="90" r="10" fill="#87CEEB" />
+  <circle cx="100" cy="90" r="10" fill="#87CEEB" />
+  <circle cx="130" cy="90" r="10" fill="#87CEEB" />
+  
+  <!-- Antenna -->
+  <line x1="100" y1="60" x2="100" y2="20" stroke="#A9A9A9" stroke-width="2" />
+  <circle cx="100" cy="20" r="5" fill="#A9A9A9" />
+</svg>

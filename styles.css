@@ -1,0 +1,147 @@
+:root {
+    --space-black: #0a0a0a;
+    --deep-blue: #0d1b2a;
+    --cosmic-purple: #4a0e4e;
+    --star-yellow: #ffd700;
+    --text-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--space-black);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.stars, .planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.space-station {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 200px;
+    opacity: 0.7;
+}
+
+header {
+    padding: 1rem;
+    background-color: rgba(13, 27, 42, 0.8);
+}
+
+.control-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.control-panel ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.control-panel li {
+    position: relative;
+}
+
+.control-panel a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.control-panel a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(13, 27, 42, 0.9);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: rgba(13, 27, 42, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: var(--star-yellow);
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(13, 27, 42, 0.8);
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .control-panel ul {
+        flex-direction: column;
+    }
+
+    .control-panel li {
+        margin-bottom: 0.5rem;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
