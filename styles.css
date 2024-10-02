@@ -91,10 +91,6 @@ header {
     display: block;
 }
 
-.dropdown .dropdown-content {
-    transition: display 0.3s;
-}
-
 main {
     display: flex;
     justify-content: center;
