@@ -50,6 +50,9 @@ function setupMenuInteractions() {
         if (content) {
             contentBox.innerHTML = content;
             contentBox.style.display = 'block';
+            if (id === '#contact') {
+                setupContactForm();
+            }
         } else {
             contentBox.style.display = 'none';
         }
@@ -92,10 +95,61 @@ function setupMenuInteractions() {
             '#faq': `
                 <h2>FAQ: How to Stake Tokens in Different PoS Blockchains</h2>
                 <p>Content for FAQ goes here.</p>
+            `,
+            '#contact': `
+                <h2>Contact Us</h2>
+                <form id="contact-form" action="${process.env.FORMSPREE_ENDPOINT}" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="form-status"></div>
             `
         };
         return contents[id] || null;
     }
+}
+
+function setupContactForm() {
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                formStatus.innerHTML = "Thanks for your submission!";
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        formStatus.innerHTML = "Oops! There was a problem submitting your form";
+                    }
+                });
+            }
+        }).catch(error => {
+            formStatus.innerHTML = "Oops! There was a problem submitting your form";
+        });
+    });
 }
 
 // Smooth scrolling for anchor links
