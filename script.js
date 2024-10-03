@@ -32,6 +32,12 @@ function setupMenuInteractions() {
     const contentBox = document.getElementById('content-box');
     const dropdowns = document.querySelectorAll('.dropdown');
 
+    // Hide all dropdown menus on page load
+    dropdowns.forEach(dropdown => {
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        dropdownContent.style.display = 'none';
+    });
+
     menuItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
             item.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
