@@ -103,8 +103,25 @@ function setupMenuInteractions() {
                 <p>My journey in the blockchain space has been nothing short of exhilarating. From the early days of Bitcoin to the emergence of cutting-edge protocols, I've witnessed the evolution of decentralized technologies firsthand. Each milestone, each breakthrough has deepened my appreciation for the transformative potential of blockchain and inspired me to contribute meaningfully to its advancement.</p>
             `,
             '#validator': `
-                <h2>Validator in Multiple Blockchains</h2>
-                <p>I've been a validator in various blockchain networks since their inception. My nodes operate smoothly and efficiently, ensuring that your staked tokens are secure and accessible at all times. With my nodes, you can trust that your investments are in safe hands.</p>
+                <h2>Validator Hardware Specifications</h2>
+                <h3>Mainnet Validator</h3>
+                <ul>
+                    <li>CPU: 2x Intel Xeon Platinum 8380 (40 cores, 80 threads each)</li>
+                    <li>RAM: 512GB ECC DDR4-3200</li>
+                    <li>Storage: 8TB NVMe SSD (Intel Optane P5800X)</li>
+                    <li>Network: 10 Gbps fiber connection with redundant lines</li>
+                    <li>Power: Redundant 1500W Platinum PSUs with UPS backup</li>
+                    <li>Security: Hardware Security Module (HSM) for key management</li>
+                </ul>
+                <h3>Testnet Validator</h3>
+                <ul>
+                    <li>CPU: AMD EPYC 7543 (32 cores, 64 threads)</li>
+                    <li>RAM: 256GB ECC DDR4-3200</li>
+                    <li>Storage: 4TB NVMe SSD</li>
+                    <li>Network: 5 Gbps fiber connection</li>
+                    <li>Power: 1000W Platinum PSU with UPS backup</li>
+                </ul>
+                <p>Both our mainnet and testnet validators are housed in Tier 4 data centers with 24/7 monitoring, ensuring 99.999% uptime and optimal performance for your staked assets.</p>
             `,
             '#community': `
                 <h2>Community Engagement</h2>
