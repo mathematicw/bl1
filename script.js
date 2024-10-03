@@ -104,24 +104,19 @@ function setupMenuInteractions() {
             `,
             '#validator': `
                 <h2>Validator Hardware Specifications</h2>
-                <h3>Mainnet Validator</h3>
+                <h3>Mainnet Node</h3>
                 <ul>
-                    <li>CPU: 2x Intel Xeon Platinum 8380 (40 cores, 80 threads each)</li>
-                    <li>RAM: 512GB ECC DDR4-3200</li>
-                    <li>Storage: 8TB NVMe SSD (Intel Optane P5800X)</li>
-                    <li>Network: 10 Gbps fiber connection with redundant lines</li>
-                    <li>Power: Redundant 1500W Platinum PSUs with UPS backup</li>
-                    <li>Security: Hardware Security Module (HSM) for key management</li>
+                    <li>CPU: Intel Core i7-7700</li>
+                    <li>RAM: 64 GB</li>
+                    <li>Storage: 1TB NVMe SSD with RAID1 configuration</li>
                 </ul>
-                <h3>Testnet Validator</h3>
+                <h3>Testnet Node</h3>
                 <ul>
-                    <li>CPU: AMD EPYC 7543 (32 cores, 64 threads)</li>
-                    <li>RAM: 256GB ECC DDR4-3200</li>
-                    <li>Storage: 4TB NVMe SSD</li>
-                    <li>Network: 5 Gbps fiber connection</li>
-                    <li>Power: 1000W Platinum PSU with UPS backup</li>
+                    <li>CPU: AMD Ryzen 9 5950X</li>
+                    <li>RAM: 128 GB</li>
+                    <li>Storage: 2TB NVMe SSD</li>
                 </ul>
-                <p>Both our mainnet and testnet validators are housed in Tier 4 data centers with 24/7 monitoring, ensuring 99.999% uptime and optimal performance for your staked assets.</p>
+                <p>Both our mainnet and testnet validators are housed in Tier 4 data centers with 24/7 monitoring, ensuring 99.999% uptime and optimal performance for your staked assets. Our cutting-edge hardware and redundant systems guarantee reliable and efficient validation services for your blockchain needs.</p>
             `,
             '#community': `
                 <h2>Community Engagement</h2>
