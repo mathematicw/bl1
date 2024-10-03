@@ -104,8 +104,8 @@ function setupMenuInteractions() {
     function getContent(id) {
         const contents = {
             '#about': `
-                <p>I'm an experienced node operator and blockchain aficionado hailing from Bangkok.</p>
-                <p>My journey in the blockchain space has been nothing short of exhilarating. From the early days of Bitcoin to the emergence of cutting-edge protocols, I've witnessed the evolution of decentralized technologies firsthand. Each milestone, each breakthrough has deepened my appreciation for the transformative potential of blockchain and inspired me to contribute meaningfully to its advancement.</p>
+                <p>We are a team of experienced node operators and blockchain aficionados from Bangkok.</p>
+                <p>Our journey in blockchain space has been nothing short of exhilarating. From the early days of Bitcoin to the emergence of cutting-edge protocols, we've witnessed the evolution of decentralized technologies firsthand. Each milestone, each breakthrough has deepened our appreciation for the transformative potential of blockchain and inspired us to contribute meaningfully to its advancement.</p>
             `,
             '#validator': `
                 <h2>Validator Hardware Specifications</h2>
@@ -115,21 +115,26 @@ function setupMenuInteractions() {
                     <li>RAM: 64 GB</li>
                     <li>Storage: 1TB NVMe SSD with RAID1 configuration</li>
                 </ul>
-                <h3>Testnet Node</h3>
+                <h3>Testnet Nodes</h3>
                 <ul>
                     <li>CPU: AMD Ryzen 9 5950X</li>
                     <li>RAM: 128 GB</li>
                     <li>Storage: 2TB NVMe SSD</li>
                 </ul>
-                <p>Both our mainnet and testnet validators are housed in Tier 4 data centers with 24/7 monitoring, ensuring 99.999% uptime and optimal performance for your staked assets. Our cutting-edge hardware and redundant systems guarantee reliable and efficient validation services for your blockchain needs.</p>
+                <ul>
+                    <li>CPU: AMD Ryzen 7</li>
+                    <li>RAM: 64 GB</li>
+                    <li>Storage: 1TB NVMe SSD RAID1</li>
+                </ul>
+                <p>All our mainnet and testnet validators are housed in Tier 3 data centers with 24/7 monitoring, ensuring 99.998% uptime and optimal performance for your staked assets. Our hardware and redundant systems guarantee reliable and efficient validation services for your blockchain needs.</p>
             `,
             '#community': `
                 <h2>Community Engagement</h2>
-                <p>I'm an active member of the blockchain community, always ready to lend a helping hand and share valuable insights.</p>
+                <p>We're active members of the blockchain community, always ready to lend a helping hand and share valuable insights.</p>
             `,
             '#transparency': `
                 <h2>Transparency</h2>
-                <p>I believe in transparency every step of the way.</p>
+                <p>We believe in the way towards adequate transparency.</p>
             `,
             '#security': `
                 <h2>Security</h2>
