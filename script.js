@@ -149,7 +149,7 @@ function setupMenuInteractions() {
                     <li>Incident Response Plan</li>
                     <li>Uninterrupted Power Supply</li>
                 </ul>
-                <p>Your security is my top priority!</p>
+                <p>Your security is our top priority!</p>
             `,
             '#faq': `
                 <h2>FAQ: How to Stake Tokens in Different PoS Blockchains</h2>
