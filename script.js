@@ -121,12 +121,13 @@ function setupMenuInteractions() {
                     <li>RAM: 128 GB</li>
                     <li>Storage: 2TB NVMe SSD</li>
                 </ul>
-                <p></br></br></p>
+                <p></br></p>
                 <ul>
                     <li>CPU: AMD Ryzen 7</li>
                     <li>RAM: 64 GB</li>
                     <li>Storage: 1TB NVMe SSD RAID1</li>
                 </ul>
+                </br>
                 <p>All our mainnet and testnet validators are housed in Tier 3 data centers with 24/7 monitoring, ensuring 99.998% uptime and optimal performance for your staked assets. Our hardware and redundant systems guarantee reliable and efficient validation services for your blockchain needs.</p>
             `,
             '#community': `
