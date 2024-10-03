@@ -116,6 +116,7 @@ function setupMenuInteractions() {
                     <li>Storage: 1TB NVMe SSD with RAID1 configuration</li>
                 </ul>
                 <h3>Testnet Nodes</h3>
+                </br>
                 <ul>
                     <li>CPU: AMD Ryzen 9 5950X</li>
                     <li>RAM: 128 GB</li>
