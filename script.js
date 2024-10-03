@@ -98,7 +98,6 @@ function setupMenuInteractions() {
     function getContent(id) {
         const contents = {
             '#about': `
-                <h1>Greetings, Space Traveler</h1>
                 <p>I'm an experienced node operator and blockchain aficionado hailing from Bangkok.</p>
                 <p>My journey in the blockchain space has been nothing short of exhilarating. From the early days of Bitcoin to the emergence of cutting-edge protocols, I've witnessed the evolution of decentralized technologies firsthand. Each milestone, each breakthrough has deepened my appreciation for the transformative potential of blockchain and inspired me to contribute meaningfully to its advancement.</p>
             `,
