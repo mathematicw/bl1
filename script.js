@@ -121,7 +121,7 @@ function setupMenuInteractions() {
                     <li>RAM: 128 GB</li>
                     <li>Storage: 2TB NVMe SSD</li>
                 </ul>
-                <p></p>
+                <p></br></br></p>
                 <ul>
                     <li>CPU: AMD Ryzen 7</li>
                     <li>RAM: 64 GB</li>
