@@ -30,6 +30,7 @@ function animateStars() {
 function setupMenuInteractions() {
     const menuItems = document.querySelectorAll('.control-panel a');
     const contentBox = document.getElementById('content-box');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
     menuItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
@@ -44,14 +45,49 @@ function setupMenuInteractions() {
         });
     });
 
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('a');
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+        if (window.innerWidth > 768) {
+            // Desktop behavior
+            dropdown.addEventListener('mouseenter', () => {
+                dropdownContent.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', () => {
+                dropdownContent.style.display = 'none';
+            });
+        } else {
+            // Mobile behavior
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                        d.querySelector('.dropdown-content').style.display = 'none';
+                    }
+                });
+                dropdown.classList.toggle('active');
+                dropdownContent.style.display = dropdown.classList.contains('active') ? 'block' : 'none';
+            });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+            dropdown.querySelector('.dropdown-content').style.display = 'none';
+        });
+    });
+
     function showContent(id) {
-        console.log('Showing content for:', id);
         const content = getContent(id);
         if (content) {
             contentBox.innerHTML = content;
             contentBox.style.display = 'block';
             if (id === '#contact') {
-                console.log('Setting up contact form');
                 setupContactForm();
             }
         } else {
@@ -60,7 +96,6 @@ function setupMenuInteractions() {
     }
 
     function getContent(id) {
-        console.log('Getting content for:', id);
         const contents = {
             '#about': `
                 <h1>Greetings, Space Traveler</h1>
@@ -123,7 +158,6 @@ function setupMenuInteractions() {
 }
 
 function setupContactForm() {
-    console.log('Setting up contact form event listener');
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
@@ -132,11 +166,8 @@ function setupContactForm() {
         return;
     }
 
-    console.log('Contact form found:', form);
-
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log('Form submitted');
         fetch(this.action, {
             method: 'POST',
             body: new FormData(this),
@@ -173,8 +204,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Call setupMenuInteractions on page load
-window.addEventListener('load', () => {
-    console.log('Page loaded, setting up menu interactions');
-    setupMenuInteractions();
-});
+// Call setupMenuInteractions on page load and window resize
+window.addEventListener('load', setupMenuInteractions);
+window.addEventListener('resize', setupMenuInteractions);
