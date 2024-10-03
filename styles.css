@@ -41,7 +41,7 @@ body {
 
 header {
     padding: 1rem;
-    background-color: rgba(13, 27, 42, 0.8);
+    background-color: #a8bdf5;
 }
 
 .control-panel {
@@ -120,6 +120,11 @@ main {
 h1, h2 {
     color: var(--cosmic-blue);
     margin-bottom: 1rem;
+}
+
+/* New rule for headers within content boxes */
+.content-box h1, .content-box h2, .content-box h3, .content-box h4, .content-box h5, .content-box h6 {
+    color: #a8bdf5;
 }
 
 ul {
