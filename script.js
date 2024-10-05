@@ -161,10 +161,11 @@ function setupMenuInteractions() {
             '#faq': `
                 <h2>FAQ: How to Stake Tokens in Different PoS Blockchains</h2>
                 <p>Content for FAQ goes here.</p>
+                <p>For information about staking on the Casper network, please visit our <a href="https://casper.blocklab.space/" target="_blank">Casper validator page</a>.</p>
             `,
             '#contact': `
                 <h2>Contact Us</h2>
-                <form id="contact-form">
+                <form id="contact-form" action="https://formspree.io/f/your_formspree_endpoint" method="POST">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -197,36 +198,29 @@ function setupContactForm() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value,
-            timestamp: new Date().toISOString()
-        };
-
-        saveFormData(formData)
-            .then(() => {
-                formStatus.innerHTML = "Thank you! Your message has been saved locally.";
+        const data = new FormData(form);
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                formStatus.innerHTML = "Thanks for your submission!";
                 form.reset();
-            })
-            .catch(error => {
-                console.error('Error saving form data:', error);
-                formStatus.innerHTML = "Oops! There was a problem saving your message. Please try again.";
-            });
-    });
-}
-
-function saveFormData(formData) {
-    return fetch('/save-message', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to save message');
-        }
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        formStatus.innerHTML = "Oops! There was a problem submitting your form";
+                    }
+                });
+            }
+        }).catch(error => {
+            formStatus.innerHTML = "Oops! There was a problem submitting your form";
+        });
     });
 }
 
