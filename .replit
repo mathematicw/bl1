@@ -10,10 +10,10 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Serve Static Website"
+args = "Custom Server"
 
 [[workflows.workflow]]
-name = "Serve Static Website"
+name = "Custom Server"
 author = "agent"
 
 [workflows.workflow.metadata]
@@ -21,7 +21,7 @@ agentRequireRestartOnSave = false
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 8000"
+args = "python server.py"
 waitForPort = 8000
 
 [deployment]

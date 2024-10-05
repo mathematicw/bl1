@@ -32,7 +32,6 @@ function setupMenuInteractions() {
     const contentBox = document.getElementById('content-box');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Hide all dropdown menus on page load
     dropdowns.forEach(dropdown => {
         const dropdownContent = dropdown.querySelector('.dropdown-content');
         dropdownContent.style.display = 'none';
@@ -56,7 +55,6 @@ function setupMenuInteractions() {
         const dropdownContent = dropdown.querySelector('.dropdown-content');
 
         if (window.innerWidth > 768) {
-            // Desktop behavior
             dropdown.addEventListener('mouseenter', () => {
                 dropdownContent.style.display = 'block';
             });
@@ -64,7 +62,6 @@ function setupMenuInteractions() {
                 dropdownContent.style.display = 'none';
             });
         } else {
-            // Mobile behavior
             dropdownToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -80,7 +77,6 @@ function setupMenuInteractions() {
         }
     });
 
-    // Close dropdowns when clicking outside
     document.addEventListener('click', () => {
         dropdowns.forEach(dropdown => {
             dropdown.classList.remove('active');
@@ -88,7 +84,6 @@ function setupMenuInteractions() {
         });
     });
 
-    // Add event listeners for 'Autonomys' and 'Casper' links
     const projectLinks = document.querySelectorAll('.dropdown-content a[href^="https://"]');
     projectLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -169,7 +164,7 @@ function setupMenuInteractions() {
             `,
             '#contact': `
                 <h2>Contact Us</h2>
-                <form id="contact-form" action="https://formspree.io/f/xqkvazvk" method="POST">
+                <form id="contact-form">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -202,33 +197,39 @@ function setupContactForm() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                formStatus.innerHTML = "Thanks for your submission!";
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            timestamp: new Date().toISOString()
+        };
+
+        saveFormData(formData)
+            .then(() => {
+                formStatus.innerHTML = "Thank you! Your message has been saved locally.";
                 form.reset();
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwnProperty.call(data, 'errors')) {
-                        formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        formStatus.innerHTML = "Oops! There was a problem submitting your form";
-                    }
-                });
-            }
-        }).catch(error => {
-            console.error('Error submitting form:', error);
-            formStatus.innerHTML = "Oops! There was a problem submitting your form";
-        });
+            })
+            .catch(error => {
+                console.error('Error saving form data:', error);
+                formStatus.innerHTML = "Oops! There was a problem saving your message. Please try again.";
+            });
     });
 }
 
-// Smooth scrolling for anchor links
+function saveFormData(formData) {
+    return fetch('/save-message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to save message');
+        }
+    });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -238,6 +239,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Call setupMenuInteractions on page load and window resize
 window.addEventListener('load', setupMenuInteractions);
 window.addEventListener('resize', setupMenuInteractions);
