@@ -1,1 +1,60 @@
-
+{
+    "owner": {
+        "name": "",
+        "description": "Oldest validator",
+        "type": ["validator", "read-only"],
+        "identity": {
+            "ownership_disclosure_url": "",
+            "casper_association_kyc_url": "",
+            "casper_association_kyc_onchain": ""
+        },
+        "resources": {
+            "code_of_conduct_url": "https://blocklab.space/",
+            "terms_of_service_url": "https://blocklab.space/",
+            "privacy_policy_url": "https://blocklab.space/",
+            "other": ["About Us"]
+        },
+        "affiliated_accounts": [
+            {"public_key": ""}
+        ],
+        "website": "https://blocklab.space/",
+        "email": "info@blocklab.space",
+        "branding": {
+            "logo": {
+                "png_256": "Casper_Logo1.png",
+                "png_1024": "",
+                "svg": ""
+            }
+        },
+        "location": {
+            "name": "Bangkok, Thailand",
+            "country": "TH",
+            "latitude": 0,
+            "longitude": 0
+        },
+        "social": {
+            "keybase": "",
+            "telegram": "",
+            "twitter": "",
+            "github": "",
+            "youtube": "",
+            "facebook": "",
+            "medium": "",
+            "reddit": "",
+            "wechat": ""
+        }
+    },
+    "nodes": [
+        {
+            "public_key": "",
+            "description": "This node is running on a dedicated machine with overspec hardware specifications in Tier-3 data center, providing a high level of redundancy and reliability, with 99.982% uptime",
+            "location": {
+                "name": "Falkenstein, Germany",
+                "country": "GE",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "functionality": ["validator", "read-only"]
+        }
+    ]
+}
