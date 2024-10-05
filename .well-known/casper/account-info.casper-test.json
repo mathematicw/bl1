@@ -1,0 +1,71 @@
+{
+  "owner": {
+    "name": "",
+    "description": "old validator",
+    "type": [
+      "validator"
+    ],
+    "identity": {
+      "ownership_disclosure_url": "",
+      "casper_association_kyc_url": "",
+      "casper_association_kyc_onchain": ""
+    },
+    "resources": {
+      "code_of_conduct_url": "",
+      "terms_of_service_url": "https://blocklab.space",
+      "privacy_policy_url": "https://blocklab.space",
+      "other": [
+        {
+          "name": "About Us",
+          "url": "https://blocklab.space"
+        }
+      ]
+    },
+    "affiliated_accounts": [
+      {
+        "public_key": "01dc22c79d13be95f8868ae60d74c372a3ca5288bdf62f58b2ddb7de32faa74c05"
+      }
+    ],
+    "website": "https://blocklab.space",
+    "email": "info@blocklab.space",
+    "branding": {
+      "logo": {
+        "png_256": "https://blocklab.space/Casper_Logo1.png",
+        "png_1024": "",
+        "svg": ""
+      }
+    },
+    "location": {
+      "name": "Falkenstein",
+      "country": "GE",
+      "latitude": 0,
+      "longitude": 0
+    },
+    "social": {
+      "keybase": "",
+      "telegram": "",
+      "twitter": "",
+      "github": "",
+      "youtube": "",
+      "facebook": "",
+      "medium": "",
+      "reddit": "",
+      "wechat": ""
+    }
+  },
+  "nodes": [
+    {
+      "public_key": "01dc22c79d13be95f8868ae60d74c372a3ca5288bdf62f58b2ddb7de32faa74c05",
+      "description": "This validator is running on a dedicated machine with overspac hardware specifications in Tier 3 data center, providing a high level of redundancy and reliability, with 99.982% uptime",
+      "location": {
+        "name": "Bangkok",
+        "country": "TH",
+        "latitude": 0,
+        "longitude": 0
+      },
+      "functionality": [
+        "validator"
+      ]
+    }
+  ]
+}
