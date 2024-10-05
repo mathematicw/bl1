@@ -88,6 +88,15 @@ function setupMenuInteractions() {
         });
     });
 
+    // Add event listeners for 'Autonomys' and 'Casper' links
+    const projectLinks = document.querySelectorAll('.dropdown-content a[href^="https://"]');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+        });
+    });
+
     function showContent(id) {
         const content = getContent(id);
         if (content) {
